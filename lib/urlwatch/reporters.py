@@ -102,7 +102,7 @@ class ReporterBase(object, metaclass=TrackSubClasses):
         timestamp_new = email.utils.formatdate(time.time(), localtime=1)
         return ''.join(difflib.unified_diff([l + '\n' for l in job_state.old_data.splitlines()],
                                             [l + '\n' for l in job_state.new_data.splitlines()],
-                                            '@', '@', timestamp_old, timestamp_new))
+                                            '@', '@', timestamp_old, timestamp_new, 0))
 
 
 class SafeHtml(object):
